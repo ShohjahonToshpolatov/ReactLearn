@@ -1,34 +1,32 @@
 import "./App.css";
 import { useState } from "react";
-import Title from "./components/Title.jsx";
 import Model from "./components/Model.jsx";
+
 function App() {
   const [showModel, setShowModel] = useState(true);
-  const [closeModel, setCloseModel] = useState(true);
 
-  const close = () => {
-    setCloseModel(false);
+  const closeModel = () => {
+    setShowModel(false);
   };
 
   return (
     <div className="App">
       {showModel && (
-        <Model close={close}>
-          <h2>yaxshi</h2>
+        <Model close={closeModel}>
+          <h2>Quvnoqlar jamoasi</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            cum nesciunt tenetur obcaecati velit quas at quam porro ipsum maxime
-            vitae, accusamus repellat ab earum vel explicabo debitis incidunt
-            reiciendis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+            distinctio velit tempora debitis maiores, error temporibus, adipisci
+            quae tenetur deleniti.
           </p>
-
-          <a href="">Join the team</a>
+          <a href="#">Jamoaga qo'shiling</a>
         </Model>
       )}
-      ;
+
       <br />
       <br />
-      <button>Show model</button>
+
+      <button onClick={() => setShowModel(true)}>Show Model</button>
     </div>
   );
 }
